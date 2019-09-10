@@ -1,0 +1,116 @@
+{
+    "name": "burger-docs",
+    "description": "Order a Burger and Burger will be ready for you to enjoy!",
+    "author": {
+        "name": "Oltion Zefi",
+        "email": "oltion.zefi@gmail.com"
+    },
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "./",
+    "main": "public/electron.js",
+    "dependencies": {
+        "@types/jest": "24.0.18",
+        "@types/node": "12.7.4",
+        "@types/react": "16.9.2",
+        "@types/react-dom": "16.9.0",
+        "electron-is-dev": "^1.1.0",
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "react-scripts": "3.1.1",
+        "styled-components": "^4.3.2",
+        "typescript": "<3.6.0"
+    },
+    "scripts": {
+        "lint": "eslint \"src/**/*\"",
+        "format": "prettier --write \"src/**/*.{tsx,ts,js,jsx,json}\"",
+        "format:check": "prettier --list-different \"src/**/*.{ts,tsx,js,jsx,json}\"",
+        "start": "rescripts start",
+        "build": "rescripts build",
+        "test": "rescripts test",
+        "eject": "react-scripts eject",
+        "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+        "postinstall": "electron-builder install-app-deps",
+        "preelectron-pack": "yarn build",
+        "electron-pack": "electron-builder -wl"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not ie <= 11",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "pre-push": "npm test"
+        }
+    },
+    "lint-staged": {
+        "*.{js,ts,jsx,tsx}": [
+            "eslint --fix",
+            "prettier --write",
+            "git add"
+        ],
+        "*.{json,md}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "prettier": {
+        "arrowParens": "always",
+        "proseWrap": "always",
+        "singleQuote": true,
+        "trailingComma": "all"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.6.0",
+        "@babel/core": "^7.6.0",
+        "@babel/preset-env": "^7.6.0",
+        "@babel/register": "^7.6.0",
+        "@rescripts/cli": "^0.0.12",
+        "@rescripts/rescript-env": "^0.0.10",
+        "@types/styled-components": "^4.1.19",
+        "@typescript-eslint/eslint-plugin": "^2.2.0",
+        "@typescript-eslint/parser": "^2.2.0",
+        "concurrently": "^4.1.2",
+        "electron": "^6.0.8",
+        "electron-builder": "^21.2.0",
+        "eslint": "^6.3.0",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-prettier": "^6.3.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-react": "^7.14.3",
+        "husky": "^3.0.5",
+        "lint-staged": "^9.2.5",
+        "prettier": "^1.18.2",
+        "wait-on": "^3.3.0"
+    },
+    "build": {
+        "appId": "com.docs.burger",
+        "productName": "Burger",
+        "copyright": "Copyright © 2019 ${author}",
+        "mac": {
+            "category": "public.app-category.utilities"
+        },
+        "files": [
+            "build/**/*",
+            "node_modules/**/*"
+        ],
+        "directories": {
+            "buildResources": "assets"
+        }
+    }
+}
