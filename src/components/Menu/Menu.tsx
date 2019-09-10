@@ -1,24 +1,28 @@
-import React from 'react'
-import { StyledMenu } from './Menu.styled'
+import React from 'react';
+import { StyledMenu } from './Menu.styled';
 
 interface MenuProps {
     open: boolean;
-    setOpen: (open: boolean) => void; 
+    setOpen: (open: boolean) => void;
 }
 
 const Menu: React.FC<MenuProps> = ({ open }) => {
     return (
-        <StyledMenu open={open}>
-            <a href="/">
-                <span role="img" aria-label="About me">🧔</span>
+      <StyledMenu open={open}>
+        <a href="/">
+          <span role="img" aria-label="About me">
+                    🧔
+          </span>
                 About Me
-            </a>
-            <a href="/">
-                <span role="img" aria-label="contact">📩</span>
+        </a>
+        <a href="/">
+          <span role="img" aria-label="contact">
+                    📩
+          </span>
                 Contact
-            </a>
-        </StyledMenu>
-    )
-}
+        </a>
+      </StyledMenu>
+    );
+};
 
-export default Menu
+export default Menu;

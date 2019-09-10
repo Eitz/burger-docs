@@ -6,18 +6,24 @@ import { useOnClickOutside } from './hooks';
 import { Burger, Menu } from './components';
 
 const App: React.FC = () => {
-  const [open, setOpen] = useState(false);
-  const node = useRef() as React.MutableRefObject<HTMLInputElement>;
+    const [open, setOpen] = useState(false);
+    const node = useRef() as React.MutableRefObject<HTMLInputElement>;
 
-  useOnClickOutside(node, () => setOpen(false));
+    useOnClickOutside(node, () => setOpen(false));
 
-  return (
-    <ThemeProvider theme={theme}>
+    return (
+      <ThemeProvider theme={theme}>
         <>
-          <GlobalStyles/>
+          <GlobalStyles />
           <div>
-            <h1>Welcome! Enjoy every Burger from our awesome store 😄</h1>
-            <img src="https://image.flaticon.com/icons/svg/2016/2016012.svg" alt="burger icon" />
+            <h1>
+                        Welcome! Enjoy every Burger from our awesome store
+              <span role="img" aria-label="happy face">😄</span>
+            </h1>
+            <img
+              src="https://image.flaticon.com/icons/svg/2016/2016012.svg"
+              alt="burger icon"
+            />
           </div>
           <div ref={node}>
             <Burger open={open} setOpen={setOpen} />
@@ -25,7 +31,7 @@ const App: React.FC = () => {
           </div>
         </>
       </ThemeProvider>
-  );
-}
+    );
+};
 
 export default App;

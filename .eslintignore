@@ -1,0 +1,8 @@
+# path/to/project/root/.eslintignore
+
+# Ignore built files except build/index.js
+build/*
+!build/index.js
+
+# Service worker
+src/serviceWorker.ts

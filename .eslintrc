@@ -5,8 +5,12 @@
         "plugin:@typescript-eslint/recommended"
     ],
     "env": {
+        "browser": true,
         "node": true,
-        "jest": true,
+        "jest": true
+    },
+    "globals": {
+        "document": false
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -21,9 +25,26 @@
         "padded-blocks": 0,
         "no-use-before-define": [2, "nofunc"],
         "no-unused-expressions": 0,
-        "react/jsx-filename-extension": [0]
+        "react/jsx-filename-extension": [0],
+        "import/prefer-default-export": 0,
+        "react/prop-types": 0,
+        "react/react-in-jsx-scope": 0
     },
     "settings": {
+        "import/ignore": [
+            "node_modules",
+            "src/react-app-env.d.ts",
+            "src/serviceWorker.ts",
+            // Ignore non-JS imports.
+            "\\.gif$",
+            "\\.jpeg$",
+            "\\.jpg$",
+            "\\.mp4$",
+            "\\.png$",
+            "\\.scss$",
+            "\\.svg$",
+            "\\.webm$"
+        ],
         "import/resolver": {
             "node": {
                 "paths": ["src"],

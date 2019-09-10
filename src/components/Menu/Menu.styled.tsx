@@ -1,11 +1,11 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const StyledMenu = styled.nav<{open: boolean}>`
+export const StyledMenu = styled.nav<{ open: boolean }>`
     display: flex;
     flex-direction: column;
     justify-content: center;
     background: ${({ theme }) => theme.primaryLight};
-    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
     height: 100vh;
     text-align: left;
     padding: 2rem;
@@ -37,4 +37,4 @@ export const StyledMenu = styled.nav<{open: boolean}>`
             color: ${({ theme }) => theme.primaryHover};
         }
     }
-`
+`;
