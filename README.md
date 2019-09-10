@@ -14,8 +14,8 @@ yarn
 yarn electron-dev
 ```
 
-If you want to check more scripts you can have a look at [available
-scripts][scripts.md]
+If you want to check more scripts you can have a look at
+[available scripts](scripts.md)
 
 ### Submitting bugs and feature requests
 

@@ -71,7 +71,8 @@
         "arrowParens": "always",
         "proseWrap": "always",
         "singleQuote": true,
-        "trailingComma": "all"
+        "trailingComma": "all",
+        "tabWidth": 4
     },
     "devDependencies": {
         "@babel/cli": "^7.6.0",

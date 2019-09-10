@@ -5,7 +5,8 @@
         "plugin:@typescript-eslint/recommended"
     ],
     "env": {
-        "node": true
+        "node": true,
+        "jest": true,
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -19,6 +20,15 @@
     "rules": {
         "padded-blocks": 0,
         "no-use-before-define": [2, "nofunc"],
-        "no-unused-expressions": 0
+        "no-unused-expressions": 0,
+        "react/jsx-filename-extension": [0]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"],
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
     }
 }
